@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher Resource Portal</title>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        :root { --bg: #f3f4f6; --sidebar: #1e293b; --primary: #2563eb; --white: #ffffff; }
+        body { font-family: 'Inter', sans-serif; margin: 0; background: var(--bg); display: flex; height: 100vh; }
+        
+        nav { width: 260px; background: var(--sidebar); color: white; padding: 2rem 1rem; display: flex; flex-direction: column; }
+        nav h1 { font-size: 1.2rem; color: #38bdf8; margin-bottom: 2rem; text-align: center; border-bottom: 1px solid #334155; padding-bottom: 1rem; }
+        nav a { color: #94a3b8; text-decoration: none; padding: 12px; margin: 5px 0; border-radius: 8px; display: flex; align-items: center; gap: 10px; }
+        nav a:hover { background: #334155; color: white; }
+
+        main { flex: 1; padding: 2rem; overflow-y: auto; }
+        .section-title { border-left: 5px solid var(--primary); padding-left: 15px; margin-bottom: 20px; }
+        
+        /* Resource Grid */
+        .resource-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
+        .folder-card { background: var(--white); padding: 1.5rem; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+        .file-list { list-style: none; padding: 0; margin-top: 15px; }
+        .file-item { display: flex; align-items: center; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid #f1f5f9; }
+        
+        .btn-download { background: #eff6ff; color: var(--primary); padding: 5px 12px; border-radius: 6px; text-decoration: none; font-size: 0.8rem; font-weight: 600; border: 1px solid var(--primary); }
+        .btn-download:hover { background: var(--primary); color: white; }
+        
+        .badge { font-size: 0.7rem; padding: 2px 6px; border-radius: 4px; font-weight: bold; text-transform: uppercase; }
+        .ppt { background: #fee2e2; color: #dc2626; }
+        .doc { background: #e0e7ff; color: #4338ca; }
+        .pkg { background: #fef3c7; color: #b45309; }
+    </style>
+</head>
+<body>
+
+<nav>
+    <h1>OFFICE OF TEACHERS</h1>
+    <a href="#"><i data-lucide="layout-dashboard"></i> Dashboard</a>
+    <a href="#lessons"><i data-lucide="folder-open"></i> Lesson Plans</a>
+    <a href="#slides"><i data-lucide="presentation"></i> PowerPoints</a>
+    <a href="#packages"><i data-lucide="package"></i> Learning Packs</a>
+    <a href="#" style="margin-top:auto; color: #f87171;"><i data-lucide="log-out"></i> Sign Out</a>
+</nav>
+
+<main>
+    <header style="margin-bottom: 30px;">
+        <h2 style="margin:0;">Teacher Resource Vault</h2>
+        <p style="color: #64748b;">Centralized access for Lesson Plans, PPTs, and Packages.</p>
+    </header>
+
+    <div class="section-title"><h3>📂 Academic Materials</h3></div>
+    
+    <div class="resource-grid">
+        <!-- Lesson Plans Folder -->
+        <div class="folder-card" id="lessons">
+            <h3><i data-lucide="file-text" style="vertical-align: middle;"></i> Lesson Plans</h3>
+            <div class="file-list">
+                <div class="file-item">
+                    <span>Week 1: Intro to Algebra <span class="badge doc">DOCX</span></span>
+                    <a href="YOUR_LINK_HERE" class="btn-download">Download</a>
+                </div>
+                <div class="file-item">
+                    <span>Week 2: Linear Equations <span class="badge doc">PDF</span></span>
+                    <a href="YOUR_LINK_HERE" class="btn-download">Download</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- PowerPoints Folder -->
+        <div class="folder-card" id="slides">
+            <h3><i data-lucide="presentation" style="vertical-align: middle;"></i> Lecture Slides (PPT)</h3>
+            <div class="file-list">
+                <div class="file-item">
+                    <span>History of Art PPT <span class="badge ppt">PPTX</span></span>
+                    <a href="YOUR_LINK_HERE" class="btn-download">View</a>
+                </div>
+                <div class="file-item">
+                    <span>Science Lab Safety <span class="badge ppt">PPTX</span></span>
+                    <a href="YOUR_LINK_HERE" class="btn-download">View</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Learning Packages Folder -->
+        <div class="folder-card" id="packages">
+            <h3><i data-lucide="archive" style="vertical-align: middle;"></i> Learning Packages</h3>
+            <div class="file-list">
+                <div class="file-item">
+                    <span>Grade 10 Full Module <span class="badge pkg">ZIP</span></span>
+                    <a href="YOUR_LINK_HERE" class="btn-download">Download</a>
+                </div>
+                <div class="file-item">
+                    <span>Teacher Induction Kit <span class="badge pkg">PDF</span></span>
+                    <a href="YOUR_LINK_HERE" class="btn-download">Download</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div style="margin-top: 40px; padding: 20px; background: #fff; border-radius: 12px; text-align: center; border: 2px dashed #cbd5e1;">
+        <p style="color: #64748b;">Need to add more files? Open the <code>index.html</code> file in Notepad and copy the <code>&lt;div class="file-item"&gt;</code> block.</p>
+    </div>
+</main>
+
+<script>lucide.createIcons();</script>
+</body>
+</html>
